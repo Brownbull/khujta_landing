@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khujta ai - Startup AI Partner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #18181b;
+            --accent: #8b5cf6;
+            --accent2: #ec4899;
+            --accent3: #06b6d4;
+            --text: #3f3f46;
+            --light: #fafafa;
+            --gradient: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Floating shapes background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #71717a;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid #e4e4e7;
+        }
+
+        .cta-button.secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            padding: 1.5rem 2rem;
+            background: white;
+            border-top: 1px solid #f4f4f5;
+            border-bottom: 1px solid #f4f4f5;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: #a1a1aa;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title p {
+            color: #71717a;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #f4f4f5;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.1);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .service-card p {
+            color: #71717a;
+            font-size: 0.9rem;
+        }
+
+        /* Agents Section */
+        .agents {
+            padding: 6rem 2rem;
+            background: var(--primary);
+        }
+
+        .agents .section-title h2 {
+            color: white;
+        }
+
+        .agents .section-title p {
+            color: #a1a1aa;
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .agent-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .agent-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .agent-tag {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .agent-card h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .agent-card p {
+            color: #a1a1aa;
+            font-size: 0.85rem;
+        }
+
+        /* Stats */
+        .stats {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #71717a;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: #71717a;
+            margin-bottom: 2rem;
+        }
+
+        .contact-email {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #71717a;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            color: #a1a1aa;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .services-grid,
+            .agents-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">khujta ai</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#agents">Agents</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">Fast-Track Your AI Strategy</div>
+            <h1>Ship <span>AI Products</span> in Days, Not Months</h1>
+            <p>Modern startups move fast. We build custom AI agents and applications with proven methodologies. From prototype to production in record time.</p>
+            <div class="cta-group">
+                <a href="#contact" class="cta-button">Start Building</a>
+                <a href="#services" class="cta-button secondary">See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="tech-stack">
+        <div class="tech-icons">
+            <span>Ralph Loop</span>
+            <span>Claude Code</span>
+            <span>Firebase</span>
+            <span>Supabase</span>
+            <span>Next.js</span>
+            <span>TypeScript</span>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Move Fast with AI</h2>
+            <p>Proven methodologies to take your idea from concept to deployment.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Rapid Prototyping</h3>
+                <p>Ralph Loop methodology for iterative autonomous development. Ship MVPs in days, not weeks.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Enterprise Scale</h3>
+                <p>GSD methodology with 11 specialized agents for complex, scalable solutions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Quality Assured</h3>
+                <p>ECC methodology: TDD + code review gates for production-critical features.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Cost Optimized</h3>
+                <p>Real-time token tracking with Archie. Know your costs: $5-50 per feature.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔌</div>
+                <h3>Integrations</h3>
+                <p>Google Workspace MCP, custom APIs, and seamless third-party connections.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Production Ready</h3>
+                <p>Firebase, Vercel, GitHub Pages deployment. Live apps with auth and databases.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">Commits (3 months)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">6+</div>
+                <div class="stat-label">Active Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Live Applications</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agents" id="agents">
+        <div class="section-title">
+            <h2>Meet the Team</h2>
+            <p>Specialized AI agents ready to power your startup.</p>
+        </div>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <span class="agent-tag">Legal Strategy</span>
+                <h3>El Letrado</h3>
+                <p>Legal strategy for startups navigating compliance.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Tax Planning</span>
+                <h3>El Tributista</h3>
+                <p>Tax insights for early-stage companies.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Meta-Agent</span>
+                <h3>El Director</h3>
+                <p>Orchestrates multiple agents for complex workflows.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Development</span>
+                <h3>ANTHRA</h3>
+                <p>General-purpose dev automation agent.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Infrastructure</span>
+                <h3>UNTRA</h3>
+                <p>Development environment automation.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Career</span>
+                <h3>Brownbull</h3>
+                <p>Startup hiring and career operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Ready to Build?</h2>
+        <p>Let's turn your idea into reality. Reach out to start your project.</p>
+        <a href="mailto:khujta.ai@gmail.com" class="contact-email">khujta.ai@gmail.com</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 khujta ai. Fast-track your AI ambitions.</p>
+    </footer>
+</body>
+</html>

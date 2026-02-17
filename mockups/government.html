@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khujta ai - Government & Defense Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0c1222;
+            --secondary: #1e3a5f;
+            --accent: #3b82f6;
+            --gold: #f59e0b;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --border: #1e3a5f;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--primary);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(12, 18, 34, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, var(--primary) 0%, #0f172a 100%);
+            padding: 7rem 3rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 50px,
+                rgba(59, 130, 246, 0.03) 50px,
+                rgba(59, 130, 246, 0.03) 51px
+            );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        .cta-button:hover {
+            background: #2563eb;
+        }
+
+        /* Security Clearances */
+        .clearance-bar {
+            background: var(--secondary);
+            padding: 1.5rem 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .clearance-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .clearance-list span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .clearance-list span::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: white;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .service-card h3 {
+            color: white;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Compliance Section */
+        .compliance {
+            background: var(--secondary);
+            padding: 4rem 3rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .compliance-item {
+            padding: 1rem;
+        }
+
+        .compliance-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .compliance-item h4 {
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .compliance-item p {
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        /* Agents Section */
+        .agents {
+            padding: 5rem 3rem;
+            background: var(--primary);
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .agent-card {
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+        }
+
+        .agent-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .agent-card h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .agent-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        /* Track Record */
+        .track-record {
+            background: var(--secondary);
+            padding: 4rem 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .track-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .track-item {
+            text-align: center;
+        }
+
+        .track-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .track-label {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 3rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact h2 {
+            font-size: 2.25rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-email {
+            font-size: 1.35rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #080d18;
+            color: #64748b;
+            padding: 2rem 3rem;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .services-grid,
+            .agents-grid,
+            .compliance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .clearance-list {
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: center;
+            }
+
+            .services-grid,
+            .agents-grid,
+            .compliance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .track-grid {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">khujta <span>ai</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#agents">Agents</a></li>
+            <li><a href="#compliance">Compliance</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Trusted AI Solutions for Government & Defense</h1>
+            <p>Proven, reliable AI agents built with security, compliance, and mission-critical reliability at the core.</p>
+            <a href="#contact" class="cta-button">Contact Our Team</a>
+        </div>
+    </section>
+
+    <div class="clearance-bar">
+        <div class="clearance-list">
+            <span>Security Clearances Available</span>
+            <span>Proven Track Record</span>
+            <span>Compliance-First Development</span>
+            <span>Mission-Critical Reliability</span>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Government AI Services</h2>
+            <p>Secure, compliant AI solutions designed for government and defense requirements.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔐</div>
+                <h3>Custom AI Agents</h3>
+                <p>Secure development agents with compliance-first architecture. Full audit trails and documentation for government contracts.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Agent Development</h3>
+                <p>Rigorous development methodologies. ECC with TDD and code review gates ensures production quality for critical systems.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>AI Applications</h3>
+                <p>Production applications with proven deployment track record. Demonstrated expertise across multiple government-adjacent sectors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="compliance" id="compliance">
+        <div class="compliance-grid">
+            <div class="compliance-item">
+                <div class="compliance-icon">📊</div>
+                <h4>Documentation</h4>
+                <p>Complete audit trails</p>
+            </div>
+            <div class="compliance-item">
+                <div class="compliance-icon">🔒</div>
+                <h4>Security</h4>
+                <p>Secure development practices</p>
+            </div>
+            <div class="compliance-item">
+                <div class="compliance-icon">✅</div>
+                <h4>Quality</h4>
+                <p>70-80% test coverage</p>
+            </div>
+            <div class="compliance-item">
+                <div class="compliance-icon">📈</div>
+                <h4>Reliability</h4>
+                <p>Proven production deployments</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="track-record">
+        <div class="track-grid">
+            <div class="track-item">
+                <div class="track-value">500+</div>
+                <div class="track-label">Commits (3 months)</div>
+            </div>
+            <div class="track-item">
+                <div class="track-value">6+</div>
+                <div class="track-label">Active Projects</div>
+            </div>
+            <div class="track-item">
+                <div class="track-value">3</div>
+                <div class="track-label">Live Deployments</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agents" id="agents">
+        <div class="section-title">
+            <h2>Specialized AI Agents</h2>
+            <p>Domain-expert agents built on the BMAD framework with full documentation.</p>
+        </div>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <span class="agent-tag">Legal Strategy</span>
+                <h3>El Letrado</h3>
+                <p>Legal strategy and compliance guidance with complete documentation.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Tax Planning</span>
+                <h3>El Tributista</h3>
+                <p>Tax compliance and regulatory insights with audit trails.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Meta-Agent</span>
+                <h3>El Director</h3>
+                <p>Multi-agent orchestration with quality control and scoring.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Development</span>
+                <h3>ANTHRA</h3>
+                <p>General-purpose development with documentation standards.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Infrastructure</span>
+                <h3>UNTRA</h3>
+                <p>Infrastructure automation for secure environments.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-tag">Operations</span>
+                <h3>Brownbull</h3>
+                <p>Operations automation with full audit capabilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Partner with Confidence</h2>
+        <p>Contact our team to discuss your government or defense AI requirements.</p>
+        <a href="mailto:khujta.ai@gmail.com" class="contact-email">khujta.ai@gmail.com</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 khujta ai. Trusted AI solutions with security and compliance at the core.</p>
+    </footer>
+</body>
+</html>
