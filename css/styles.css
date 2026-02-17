@@ -401,6 +401,33 @@ a:hover {
     border-top: 1px solid #1e293b;
 }
 
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    font-size: var(--font-size-sm);
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer p {
+    margin-bottom: var(--space-2);
+}
+
+.footer a {
+    color: var(--accent);
+}
+
 /* Utility Classes */
 .text-center { text-align: center; }
 .mb-0 { margin-bottom: 0; }
