@@ -1,0 +1,7 @@
+# robots.txt for khujta ai website
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://brownbull.github.io/khujta_landing/sitemap.xml
