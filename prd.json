@@ -86,7 +86,7 @@
         "Section heading conveys 'Our AI Agents' or 'Meet Our Specialists'"
       ],
       "priority": 5,
-      "passes": false,
+      "passes": true,
       "notes": "Agent descriptions should be concise but convey expertise area. Consider placeholder images or icons for each agent to add personality. Grid should degrade gracefully to single column on mobile. AGENT DETAILS: El Director (meta-agent for framework orchestration, 6-layer architecture for professional agents, agent scoring and quality control), El Letrado (civil litigation, professional negligence, Chilean legal system expertise, strategic legal guidance NOT official advice), El Tributarista (Chilean tax law, SII compliance, Airbnb tax structures, strategic tax guidance NOT official advice), Brownbull (career operations agent: job search strategy, resume optimization, pipeline tracking), UNTRA/Unthra (Ubuntu development workstation agent for remote Claude Code setup via Tailscale VPN). All agents use BMAD framework with sidecar knowledge/memory patterns. Emphasize: strategic guidance, NOT official legal/tax advice. Optional: Include mention of development methodologies (Ralph Loop, GSD, ECC) as meta-capabilities."
     },
     {

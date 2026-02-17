@@ -42,3 +42,8 @@
 - Updated service descriptions with strategic guidance disclaimer
 - Mentioned development methodologies (Ralph Loop, GSD, ECC)
 - Added btn-link CSS class for Learn More links
+
+## 2026-02-17 - US-005
+- Agents section with 6 agent cards in responsive grid
+- Required agents included: ANTHRA, UNTRA, UNTHERA, El Letrado, El Tributista, El Director
+- Each card shows agent name, domain tag, and description
