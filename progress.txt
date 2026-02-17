@@ -47,3 +47,9 @@
 - Agents section with 6 agent cards in responsive grid
 - Required agents included: ANTHRA, UNTRA, UNTHERA, El Letrado, El Tributista, El Director
 - Each card shows agent name, domain tag, and description
+
+## 2026-02-17 - US-006
+- Products section with Boletapp, NitoAwa, Google Workspace MCP cards
+- Footer with links to key pages: Services, Agents, Products, About, Contact
+- Contact email (khujta.ai@gmail.com) displayed in footer
+- Footer has distinct background color from main content
