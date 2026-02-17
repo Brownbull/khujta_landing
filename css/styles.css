@@ -235,6 +235,19 @@ a:hover {
     text-decoration: none;
 }
 
+.btn-link {
+    display: inline-block;
+    margin-top: var(--space-4);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+.btn-link:hover {
+    text-decoration: none;
+    color: #2563eb;
+}
+
 /* Sections */
 .section {
     padding: var(--space-20) 0;
