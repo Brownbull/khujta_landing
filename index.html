@@ -17,6 +17,18 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E">
 </head>
 <body>
+    <!-- Version Selector -->
+    <div class="version-selector">
+        <label for="version-select">View site as:</label>
+        <select id="version-select" onchange="switchVersion(this.value)">
+            <option value="enterprise">Enterprise</option>
+            <option value="professional">Professional Services</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="startup">Startup</option>
+            <option value="government">Government</option>
+        </select>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -25,6 +37,7 @@
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#methodologies">Methods</a></li>
                 <li><a href="#agents">Agents</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#about">About</a></li>
@@ -41,6 +54,30 @@
             <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
         </div>
     </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Commits (3 months)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">6+</span>
+                    <span class="stat-label">Active Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">79%</span>
+                    <span class="stat-label">Code Coverage</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">$5-50</span>
+                    <span class="stat-label">Per Feature</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Trust Indicators -->
     <div class="trust-bar">
@@ -84,6 +121,54 @@
         </div>
     </section>
 
+    <!-- Methodologies Section -->
+    <section class="section methodologies-section" id="methodologies">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Development Methods</h2>
+                <p>Proven methodologies for different project scales and requirements.</p>
+            </div>
+            <div class="methodologies-grid">
+                <div class="methodology-card">
+                    <div class="methodology-icon">🔄</div>
+                    <h3>Ralph Loop</h3>
+                    <p class="methodology-tagline">Iterative Autonomous Development</p>
+                    <p>Single-agent self-referential development using stop-hook driven iteration. Best for clear PRD with independent user stories, quick prototypes, and bug fixing.</p>
+                    <ul class="methodology-features">
+                        <li>~380 lines of code</li>
+                        <li>Fresh context per iteration</li>
+                        <li>Atomic git commits</li>
+                    </ul>
+                    <a href="https://github.com/Brownbull/khujta_eggs" target="_blank" class="btn-link">View on GitHub →</a>
+                </div>
+                <div class="methodology-card">
+                    <div class="methodology-icon">🚀</div>
+                    <h3>GSD</h3>
+                    <p class="methodology-tagline">Get Shit Done - Enterprise Scale</p>
+                    <p>11 specialized agents with context engineering for large-scale development. Solves context rot via fresh 200K token windows per task.</p>
+                    <ul class="methodology-features">
+                        <li>11 specialized agents</li>
+                        <li>~52,000 lines of prompts</li>
+                        <li>Wave-based parallel execution</li>
+                    </ul>
+                    <a href="https://github.com/Brownbull/khujta_eggs" target="_blank" class="btn-link">View on GitHub →</a>
+                </div>
+                <div class="methodology-card">
+                    <div class="methodology-icon">🛡️</div>
+                    <h3>ECC</h3>
+                    <p class="methodology-tagline">Enterprise Code & Control</p>
+                    <p>Test-Driven Development + architecture validation + code review gates. For production-critical features requiring maximum quality.</p>
+                    <ul class="methodology-features">
+                        <li>TDD methodology</li>
+                        <li>Architecture validation</li>
+                        <li>Code review gates</li>
+                    </ul>
+                    <a href="https://github.com/Brownbull/khujta_eggs" target="_blank" class="btn-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Agents Section -->
     <section class="section agents-section" id="agents">
         <div class="container">
@@ -122,6 +207,11 @@
                     <h3>UNTRA</h3>
                     <p>Ubuntu development workstation agent for remote Claude Code setup.</p>
                 </div>
+                <div class="agent-card">
+                    <span class="agent-tag">Career</span>
+                    <h3>Brownbull</h3>
+                    <p>Career operations agent for job search strategy and pipeline management.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -137,18 +227,63 @@
                 <div class="service-card">
                     <div class="service-icon">🧾</div>
                     <h3>Boletapp</h3>
-                    <p>AI-powered expense tracking PWA with Gemini 2.5 Flash receipt scanning. Live at boletapp-d609f.web.app with Firebase auth and 79% code coverage.</p>
+                    <p>AI-powered expense tracking PWA with Gemini 2.5 Flash receipt scanning. Live at <a href="https://boletapp-d609f.web.app" target="_blank">boletapp-d609f.web.app</a> with Firebase auth and 79% code coverage.</p>
+                    <a href="https://github.com/Brownbull/gmni_boletapp" target="_blank" class="btn-link">View on GitHub →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💧</div>
                     <h3>NitoAgua</h3>
                     <p>Water delivery coordination for rural Chile. Built with Next.js/TypeScript/Supabase, mobile PWA, 200+ commits, Epic 12.8 active.</p>
+                    <a href="https://github.com/Brownbull/nitoagua" target="_blank" class="btn-link">View on GitHub →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📦</div>
                     <h3>Google Workspace MCP</h3>
-                    <p>Open-source PyPI tool for full Google Workspace API control via natural language. OAuth 2.1 multi-user, published at workspacemcp.com.</p>
+                    <p>Open-source PyPI tool for full Google Workspace API control via natural language. OAuth 2.1 multi-user, published at <a href="https://workspacemcp.com" target="_blank">workspacemcp.com</a>.</p>
+                    <a href="https://pypi.org/project/workspace-mcp/" target="_blank" class="btn-link">View on PyPI →</a>
                 </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Archie</h3>
+                    <p>AI workflow cost tracking with real-time token economics. Track $5-50 per feature, 126+ sessions analyzed, 85%+ cache efficiency.</p>
+                    <a href="https://github.com/Brownbull/archie" target="_blank" class="btn-link">View on GitHub →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Ayni</h3>
+                    <p>Python-based workflow automation project. Part of the khujta ai development ecosystem.</p>
+                    <a href="https://github.com/Brownbull/ayni" target="_blank" class="btn-link">View on GitHub →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Taskflow</h3>
+                    <p>Task management and workflow automation tool with Python backend and JavaScript frontend.</p>
+                    <a href="https://github.com/Brownbull/taskflow" target="_blank" class="btn-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section tech-stack-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tech Stack</h2>
+                <p>Modern technologies we work with.</p>
+            </div>
+            <div class="tech-badges">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Firebase</span>
+                <span class="tech-badge">Supabase</span>
+                <span class="tech-badge">Google Gemini</span>
+                <span class="tech-badge">Claude Code</span>
+                <span class="tech-badge">Tailwind CSS</span>
+                <span class="tech-badge">Vercel</span>
+                <span class="tech-badge">GitHub Actions</span>
+                <span class="tech-badge">Playwright</span>
             </div>
         </div>
     </section>
@@ -191,6 +326,7 @@
         <div class="container">
             <div class="footer-links">
                 <a href="#services">Services</a>
+                <a href="#methodologies">Methods</a>
                 <a href="#agents">Agents</a>
                 <a href="#products">Products</a>
                 <a href="#about">About</a>
@@ -202,6 +338,63 @@
     </footer>
 
     <script>
+        // Version selector - switch between mockup versions
+        function switchVersion(version) {
+            const baseUrl = window.location.href.split('?')[0];
+            window.location.href = baseUrl + '?v=' + version;
+        }
+
+        // Check URL for version parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const versionParam = urlParams.get('v');
+        if (versionParam) {
+            const select = document.getElementById('version-select');
+            if (select && document.querySelector('option[value="' + versionParam + '"]')) {
+                select.value = versionParam;
+                applyVersionStyles(versionParam);
+            }
+        }
+
+        // Apply version-specific styles
+        function applyVersionStyles(version) {
+            const root = document.documentElement;
+
+            const versions = {
+                enterprise: {
+                    primary: '#0f172a',
+                    accent: '#3b82f6',
+                    bg: '#f8fafc'
+                },
+                professional: {
+                    primary: '#1c1917',
+                    accent: '#b45309',
+                    bg: '#fafaf9'
+                },
+                healthcare: {
+                    primary: '#134e4a',
+                    accent: '#5eead4',
+                    bg: '#f0fdfa'
+                },
+                startup: {
+                    primary: '#18181b',
+                    accent: '#8b5cf6',
+                    bg: '#fafafa'
+                },
+                government: {
+                    primary: '#0c1222',
+                    accent: '#3b82f6',
+                    bg: '#0f172a'
+                }
+            };
+
+            const v = versions[version];
+            if (v) {
+                root.style.setProperty('--primary', v.primary);
+                root.style.setProperty('--accent', v.accent);
+                root.style.setProperty('--light', v.bg);
+            }
+        }
+
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');

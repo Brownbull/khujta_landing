@@ -502,3 +502,182 @@ a:hover {
         padding: var(--space-3) var(--space-6);
     }
 }
+
+/* Version Selector */
+.version-selector {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    background: var(--white);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.version-selector label {
+    font-size: var(--font-size-sm);
+    color: var(--text);
+}
+
+.version-selector select {
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    background: var(--white);
+    cursor: pointer;
+}
+
+.version-selector select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Stats Bar */
+.stats-bar {
+    background: var(--primary);
+    padding: var(--space-6) 0;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-12);
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .stat-value {
+    display: block;
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--white);
+}
+
+.stat-item .stat-label {
+    font-size: var(--font-size-sm);
+    color: #94a3b8;
+}
+
+/* Methodologies Section */
+.methodologies-section {
+    background: var(--light);
+}
+
+.methodologies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-8);
+}
+
+.methodology-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.methodology-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.methodology-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+}
+
+.methodology-card h3 {
+    margin-bottom: var(--space-2);
+}
+
+.methodology-tagline {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-4);
+}
+
+.methodology-features {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0;
+}
+
+.methodology-features li {
+    padding: var(--space-1) 0;
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    position: relative;
+    padding-left: var(--space-4);
+}
+
+.methodology-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Tech Stack Section */
+.tech-stack-section {
+    background: #f1f5f9;
+}
+
+.tech-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.tech-badge {
+    display: inline-block;
+    background: var(--white);
+    color: var(--text);
+    padding: var(--space-2) var(--space-4);
+    border-radius: 50px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.tech-badge:hover {
+    background: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+}
+
+/* Responsive for new sections */
+@media (max-width: 768px) {
+    .stats-grid {
+        gap: var(--space-6);
+    }
+
+    .methodologies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-badges {
+        gap: var(--space-2);
+    }
+
+    .version-selector {
+        top: auto;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .nav-links {
+        padding-top: var(--space-12);
+    }
+}
