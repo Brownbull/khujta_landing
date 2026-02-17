@@ -70,7 +70,7 @@
         "Section visually distinct from hero with background color or spacing change"
       ],
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "notes": "Emphasize strategic vs. official advice distinction. Use inclusive language: 'guidance', 'strategy', 'insights' rather than 'legal advice' or 'tax advice'. Draw inspiration from Scale AI and Anthropic service presentations. PORTFOLIO CONTEXT: khujta ai has 500+ commits in last 3 months across 6+ active projects. Demonstrated expertise in AI agent development, full-stack applications, and open-source tools. Services include: (1) Professional agents for legal/tax/business domains using BMAD framework, (2) Custom agent development with proven methodologies: Ralph Loop (iterative autonomous dev), GSD (11-agent orchestration with context engineering), ECC (TDD + architecture validation), (3) Production applications: Boletapp (live AI receipt scanning at boletapp-d609f.web.app, Gemini 2.5 Flash), NitoAgua (rural water delivery, 200+ commits), Google Workspace MCP (PyPI published, workspacemcp.com), (4) AI workflow cost optimization via Archie ($5-50 per feature with real-time token tracking)."
     },
     {
