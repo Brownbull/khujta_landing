@@ -1,0 +1,15 @@
+## Codebase Patterns
+- Static HTML/CSS mockups are self-contained and don't require build/lint/test
+- Each persona mockup uses CSS variables for easy theming
+- Semantic HTML structure with clear sections (nav, hero, services, agents, contact, footer)
+
+## 2026-02-17 - US-001
+- Implemented 5 HTML mockup files for different customer personas
+- Files created: mockups/enterprise.html, mockups/professional-services.html, mockups/healthcare.html, mockups/startup.html, mockups/government.html
+- Each mockup has unique design: color palette, typography, content emphasis
+- README.md created in mockups/ documenting design rationale
+- **Learnings:**
+  - Used CSS variables for easy theming across mockups
+  - Responsive design with mobile/tablet/desktop breakpoints
+  - Included all common elements: hero, services, agents, contact with khujta.ai@gmail.com
+  - Professional services mockup prominently features strategic guidance disclaimer

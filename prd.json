@@ -1,74 +1,141 @@
 {
-  "project": "my-poc",
-  "branchName": "ralph/build-my-poc",
-  "description": "Brief description of what this PoC does and why",
+  "project": "kujta-ai-agency-website",
+  "branchName": "ralph/build-kujta-ai-agency-website",
+  "repository": "https://github.com/Brownbull/khujta_landing.git",
+  "deploymentUrl": "https://brownbull.github.io/khujta_landing/",
+  "description": "A professional static marketing website for khujta ai, showcasing AI agent development services, expert agents (legal, tax, business strategy), and AI applications. Deployable to GitHub Pages with clean design and portfolio presentation. Contact: khujta.ai@gmail.com",
   "userStories": [
     {
       "id": "US-001",
-      "title": "Project initialization",
-      "description": "Set up the project structure with the chosen tech stack, install dependencies, create the basic folder layout, and ensure the project builds and runs",
+      "title": "Design mockups for target customer personas",
+      "description": "Generate 5 distinct HTML/CSS mockups targeting different customer personas: (1) Enterprise tech company, (2) Legal/Professional services firm, (3) Healthcare/Medical organization, (4) Small business/Startup, (5) Government/Defense contractor. Each mockup should showcase khujta ai services with design approach tailored to that audience's expectations and priorities.",
       "acceptanceCriteria": [
-        "Project has package.json (or equivalent) with all needed dependencies",
-        "Project compiles/builds without errors",
-        "Basic folder structure exists (src/, tests/ or equivalent)",
-        "A simple health check or hello world endpoint/output works"
+        "Five HTML mockup files created in /mockups/ directory: enterprise.html, professional-services.html, healthcare.html, startup.html, government.html",
+        "Each mockup demonstrates unique design approach: color palette, typography, imagery style, content emphasis",
+        "Enterprise mockup emphasizes: scalability, security, enterprise-grade solutions, case studies",
+        "Professional services mockup emphasizes: strategic guidance disclaimer, compliance, expertise credentials",
+        "Healthcare mockup emphasizes: data privacy, HIPAA awareness, patient-centered language",
+        "Startup mockup emphasizes: agility, innovation, quick time-to-value, modern tech stack",
+        "Government mockup emphasizes: security clearances, compliance, reliability, proven track record",
+        "All mockups are responsive and functional (no broken layouts)",
+        "Mockups include hero, services overview, agent portfolio, contact section with khujta.ai@gmail.com",
+        "README.md documents design rationale for each persona and includes screenshots"
       ],
       "priority": 1,
-      "passes": false,
-      "notes": "Choose the simplest tech stack that fits the PoC goals"
+      "passes": true,
+      "notes": "Research AI agency sites (Anthropic, OpenAI, Scale AI, AI21) for design patterns. Each mockup should feel distinctly tailored to its audience while maintaining khujta ai brand coherence. Use modern design trends: clean typography, ample whitespace, professional color schemes. Final mockup selection will inform US-002 implementation."
     },
     {
       "id": "US-002",
-      "title": "Core data model",
-      "description": "Define and implement the core data structures/models needed for the PoC",
+      "title": "Project initialization and build setup",
+      "description": "Set up the static site project structure with HTML5, CSS3, and JavaScript. Configure for GitHub Pages deployment. Include responsive design foundation using modern CSS (Flexbox/Grid) or Tailwind CSS. Select best mockup design from US-001 as foundation.",
       "acceptanceCriteria": [
-        "Data models are defined with proper types",
-        "Basic CRUD operations work (if applicable)",
-        "At least one test validates the data model"
+        "Project folder structure created with /css, /js, /images, /pages directories",
+        "index.html exists with valid HTML5 doctype and semantic structure based on selected mockup",
+        "CSS framework or custom styles initialized with responsive breakpoints (mobile, tablet, desktop)",
+        "GitHub Pages configuration file or branch structure ready for deployment",
+        "Basic font system and color palette defined in CSS variables or config (from selected mockup)",
+        "All files pass HTML/CSS validation with no critical errors"
       ],
       "priority": 2,
       "passes": false,
-      "notes": ""
+      "notes": "Prefer clean, modern design from mockup phase. Consider Tailwind CSS for rapid styling or simple custom CSS if keeping dependencies minimal. Ensure mobile-first responsive design from the start."
     },
     {
       "id": "US-003",
-      "title": "Main feature implementation",
-      "description": "Implement the primary feature that demonstrates the PoC's value",
+      "title": "Homepage hero section and main navigation",
+      "description": "Create the homepage hero section with compelling headline about khujta ai's mission, clear value proposition, and primary call-to-action. Implement site-wide navigation header with links to all main sections.",
       "acceptanceCriteria": [
-        "Feature works as described in the PRD description",
-        "Happy path is functional",
-        "At least one test covers the main flow"
+        "Hero section displays company name, tagline emphasizing AI agency expertise, and CTA button",
+        "Navigation bar fixed or sticky with links to: Home, Services, Agents, Products, About, Contact",
+        "Navigation responsive: hamburger menu on mobile, full menu on desktop",
+        "Hero section includes visual element (gradient, abstract shapes, or placeholder for future asset)",
+        "CTA button links to Contact section (khujta.ai@gmail.com) or Services overview",
+        "Typography hierarchy clear: H1 for main headline, readable body text"
       ],
       "priority": 3,
       "passes": false,
-      "notes": ""
+      "notes": "Headline should convey: 'Strategic AI solutions for businesses' or similar. Value prop: custom agents, not binding professional advice. Keep design clean and professional, not overly flashy. Reference mockup design patterns from US-001."
     },
     {
       "id": "US-004",
-      "title": "Basic error handling and edge cases",
-      "description": "Add error handling for common failure scenarios and validate inputs",
+      "title": "Services overview section",
+      "description": "Create a Services section showcasing the three main offerings: Custom AI Agents for professional domains, Agent Development Services (PMAT Suite, Claude, custom frameworks), and AI Applications portfolio.",
       "acceptanceCriteria": [
-        "Invalid inputs return clear error messages",
-        "Application doesn't crash on unexpected input",
-        "Error cases have test coverage"
+        "Services section contains three distinct cards or columns for each service category",
+        "Each service card has icon/visual, heading, 2-3 sentence description, and optional 'Learn More' link",
+        "Custom AI Agents card mentions: strategic guidance for legal, tax, business (not binding advice)",
+        "Agent Development card mentions: PMAT Suite, Claude code agents, custom frameworks for companies",
+        "AI Applications card mentions: Castify, NitoAwa, and extensibility for future products",
+        "Section visually distinct from hero with background color or spacing change"
       ],
       "priority": 4,
       "passes": false,
-      "notes": ""
+      "notes": "Emphasize strategic vs. official advice distinction. Use inclusive language: 'guidance', 'strategy', 'insights' rather than 'legal advice' or 'tax advice'. Draw inspiration from Scale AI and Anthropic service presentations. PORTFOLIO CONTEXT: khujta ai has 500+ commits in last 3 months across 6+ active projects. Demonstrated expertise in AI agent development, full-stack applications, and open-source tools. Services include: (1) Professional agents for legal/tax/business domains using BMAD framework, (2) Custom agent development with proven methodologies: Ralph Loop (iterative autonomous dev), GSD (11-agent orchestration with context engineering), ECC (TDD + architecture validation), (3) Production applications: Boletapp (live AI receipt scanning at boletapp-d609f.web.app, Gemini 2.5 Flash), NitoAgua (rural water delivery, 200+ commits), Google Workspace MCP (PyPI published, workspacemcp.com), (4) AI workflow cost optimization via Archie ($5-50 per feature with real-time token tracking)."
     },
     {
       "id": "US-005",
-      "title": "Documentation and README",
-      "description": "Create a README with setup instructions, usage examples, and architecture overview",
+      "title": "Agent portfolio showcase",
+      "description": "Create an Agents showcase section highlighting existing agents: ANTHRA, UNTRA, UNTHERA (general), El Letrado, El Tributista, El Director (legal/tax specialists), and other expert agents. Each agent should have a brief description and domain tag.",
       "acceptanceCriteria": [
-        "README.md exists with project description",
-        "Setup/installation instructions are clear",
-        "At least one usage example is provided",
-        "All tests pass as final verification"
+        "Agents section displays at least 6 agent cards in a grid layout (2-3 columns responsive)",
+        "Each agent card shows: agent name, domain tag (e.g., 'Legal Strategy', 'Tax Planning', 'General Purpose'), and 1-2 sentence description",
+        "Cards for: ANTHRA, UNTRA, UNTHERA, El Letrado, El Tributista, El Director included",
+        "Visual consistency: all cards same height or flexible with elegant overflow handling",
+        "Optional filter/tag system to group by domain (Legal, Tax, Business, General)",
+        "Section heading conveys 'Our AI Agents' or 'Meet Our Specialists'"
       ],
       "priority": 5,
       "passes": false,
-      "notes": "This is the last story — do a final full test run"
+      "notes": "Agent descriptions should be concise but convey expertise area. Consider placeholder images or icons for each agent to add personality. Grid should degrade gracefully to single column on mobile. AGENT DETAILS: El Director (meta-agent for framework orchestration, 6-layer architecture for professional agents, agent scoring and quality control), El Letrado (civil litigation, professional negligence, Chilean legal system expertise, strategic legal guidance NOT official advice), El Tributarista (Chilean tax law, SII compliance, Airbnb tax structures, strategic tax guidance NOT official advice), Brownbull (career operations agent: job search strategy, resume optimization, pipeline tracking), UNTRA/Unthra (Ubuntu development workstation agent for remote Claude Code setup via Tailscale VPN). All agents use BMAD framework with sidecar knowledge/memory patterns. Emphasize: strategic guidance, NOT official legal/tax advice. Optional: Include mention of development methodologies (Ralph Loop, GSD, ECC) as meta-capabilities."
+    },
+    {
+      "id": "US-006",
+      "title": "Products section and footer with contact info",
+      "description": "Create a Products section showcasing Castify and NitoAwa applications with brief descriptions. Implement site footer with company info, social links (if applicable), and contact information: khujta.ai@gmail.com",
+      "acceptanceCriteria": [
+        "Products section displays cards for Castify and NitoAwa with name, description, and optional link/CTA",
+        "Each product card visually consistent with rest of site, includes brief value proposition",
+        "Footer contains: khujta ai copyright notice, links to key pages, and contact email: khujta.ai@gmail.com displayed prominently",
+        "Footer layout responsive: stacked on mobile, multi-column on desktop",
+        "Optional: social media icon links if handles exist (LinkedIn, GitHub, etc.)",
+        "Footer background color distinct from main content for clear separation"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": "Products section can be brief since focus is on agent services. If external links exist, include them. Contact email khujta.ai@gmail.com should be clickable (mailto:) and visible in footer. PRODUCT DETAILS: Boletapp (LIVE at boletapp-d609f.web.app: AI-powered expense tracking PWA with Gemini 2.5 Flash receipt scanning, Firebase auth, 79% code coverage, 3-tier testing, production deployment Nov 2025), NitoAgua (water delivery coordination for rural Chile, Next.js/TypeScript/Supabase, mobile PWA, 200+ commits, Epic 12.8 active), Google Workspace MCP (open-source PyPI tool at workspacemcp.com: full Google Workspace API control via natural language, OAuth 2.1 multi-user, v1.9.0), Archie (AI workflow cost tracking tool: real-time token economics, $5-50 per feature optimization, cache efficiency analysis, 126+ sessions tracked). FRAMEWORKS: BMAD (agent development framework with sidecar pattern), Ralph Loop (iterative autonomous dev, ~380 lines, stop-hook driven), GSD (11 specialized agents, wave-based parallel execution, context engineering), ECC (Ralph + TDD + code review gates, $25-50 per feature)."
+    },
+    {
+      "id": "US-007",
+      "title": "About and Contact page with deployment configuration",
+      "description": "Create an About section or page with khujta ai's mission, team info, or company story. Create a Contact page or section with form or email contact method (khujta.ai@gmail.com). Configure final deployment settings for GitHub Pages and test deployment.",
+      "acceptanceCriteria": [
+        "About section describes khujta ai mission: providing strategic AI solutions, custom agents, and applications for businesses",
+        "About section mentions emphasis on strategy/guidance (not licensed professional services)",
+        "Contact page or section includes email address khujta.ai@gmail.com (Formspree/Netlify Forms or simple mailto: link)",
+        "GitHub Pages deployment successful: site loads at username.github.io/repo-name or custom domain",
+        "All navigation links functional across all pages/sections",
+        "Site tested on mobile and desktop browsers: responsive layout works correctly"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": "About section can be brief initially, expandable later. For contact form, if no backend desired, use mailto:khujta.ai@gmail.com link or integrate free form service. Ensure GitHub Pages branch/settings configured (gh-pages branch or main/docs folder). COMPANY CONTEXT: khujta ai is an active AI development agency with 6+ concurrent projects, 500+ commits in last 3 months. Specializations: (1) Chilean legal/tax/business domains with strategic guidance (NOT licensed advice), (2) Rural infrastructure solutions (NitoAgua water delivery), (3) Open-source developer tools (Google Workspace MCP on PyPI), (4) AI-powered applications (Boletapp live at boletapp-d609f.web.app), (5) AI development methodologies (Ralph Loop for fast prototyping, GSD for enterprise scale, ECC for quality-critical projects), (6) AI workflow cost optimization (Archie tracking with $5-50 per feature transparency). Proven track record: Production deployments (Firebase Hosting, Vercel, GitHub Pages, PyPI publishing), Multi-user auth (OAuth 2.1, Firebase, Supabase), Testing culture (70-80% coverage, 3-tier strategies), Cost-conscious AI development (real-time token tracking and optimization). Mission: Provide strategic AI solutions, custom agents, and production applications for businesses. We build AI systems that work, with measurable costs and proven methodologies."
+    },
+    {
+      "id": "US-008",
+      "title": "Documentation, README, and SEO optimization",
+      "description": "Write comprehensive README with deployment instructions, project structure overview, and update guidelines. Add meta tags for SEO (title, description, keywords) and Open Graph tags for social sharing. Include robots.txt and favicon.",
+      "acceptanceCriteria": [
+        "README.md includes: project overview, deployment instructions for GitHub Pages, folder structure explanation, and how to update content",
+        "All HTML pages have descriptive <title> tags and meta description tags relevant to khujta ai services",
+        "Open Graph meta tags added for og:title, og:description, og:image (use placeholder or logo)",
+        "favicon.ico present or SVG favicon linked in all HTML pages",
+        "robots.txt file present (allow all or specify rules)",
+        "README includes contact info (khujta.ai@gmail.com) or link to repo issues for future updates"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": "SEO keywords: 'AI agency', 'custom AI agents', 'business AI strategy', 'AI development services', 'PMAT Suite', 'Claude agents'. README should be maintainer-friendly for non-technical updates later. Document mockup design process from US-001."
     }
   ]
 }
