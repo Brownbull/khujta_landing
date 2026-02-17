@@ -1,0 +1,4 @@
+# GitHub Pages Configuration
+
+This file (.nojekyll) prevents GitHub Pages from processing the site with Jekyll.
+This allows using underscores in filenames and ensures proper static file serving.
