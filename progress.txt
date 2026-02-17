@@ -27,3 +27,12 @@
   - CSS custom properties make theming easy across pages
   - Mobile-first approach works well for responsive design
   - Semantic HTML with proper landmarks improves accessibility
+
+## 2026-02-17 - US-003
+- Updated navigation with all required links: Home, Services, Agents, Products, About, Contact
+- Added Products section with Boletapp, NitoAgua, Google Workspace MCP
+- Hero section with gradient background and abstract shapes pattern
+- Mobile responsive navigation with hamburger menu
+- **Learnings:**
+  - Navigation needs explicit "Home" link even if logo links to home
+  - Products section should be between Agents and About sections
