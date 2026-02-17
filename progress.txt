@@ -1,7 +1,9 @@
 ## Codebase Patterns
-- Static HTML/CSS mockups are self-contained and don't require build/lint/test
+- Static HTML/CSS projects don't require build/lint/test - just valid HTML/CSS
 - Each persona mockup uses CSS variables for easy theming
 - Semantic HTML structure with clear sections (nav, hero, services, agents, contact, footer)
+- Use CSS custom properties (variables) for consistent theming
+- Mobile-first responsive design with CSS Grid and Flexbox
 
 ## 2026-02-17 - US-001
 - Implemented 5 HTML mockup files for different customer personas
@@ -13,3 +15,15 @@
   - Responsive design with mobile/tablet/desktop breakpoints
   - Included all common elements: hero, services, agents, contact with khujta.ai@gmail.com
   - Professional services mockup prominently features strategic guidance disclaimer
+
+## 2026-02-17 - US-002
+- Created project folder structure: /css, /js, /images, /pages
+- Created index.html with valid HTML5 doctype and semantic structure
+- CSS stylesheet with responsive breakpoints (mobile, tablet, desktop)
+- Color palette and typography defined in CSS variables (from enterprise mockup)
+- Added .nojekyll for GitHub Pages deployment
+- Mobile navigation with hamburger menu toggle
+- **Learnings:**
+  - CSS custom properties make theming easy across pages
+  - Mobile-first approach works well for responsive design
+  - Semantic HTML with proper landmarks improves accessibility
