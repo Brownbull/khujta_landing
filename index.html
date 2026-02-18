@@ -340,15 +340,32 @@
 
     <script>
         // Version selector - switch between mockup versions
+        // Map dropdown values to actual file names
+        const versionMap = {
+            'enterprise': 'mockups/enterprise.html',
+            'professional': 'mockups/professional-services.html',
+            'healthcare': 'mockups/healthcare.html',
+            'startup': 'mockups/startup.html',
+            'government': 'mockups/government.html'
+        };
+
         function switchVersion(version) {
-            if (version === '') {
+            if (!version) {
                 // Go to default main site
                 window.location.href = window.location.href.split('?')[0];
                 return;
             }
             // Link to the mockup HTML file
-            window.location.href = 'mockups/' + version + '.html';
+            const url = versionMap[version];
+            if (url) {
+                window.location.href = url;
+            }
         }
+
+        // Add event listener for dropdown
+        document.getElementById('version-select').addEventListener('change', function() {
+            switchVersion(this.value);
+        });
 
         // Check URL for version parameter
         const urlParams = new URLSearchParams(window.location.search);
