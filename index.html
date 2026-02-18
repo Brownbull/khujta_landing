@@ -21,6 +21,7 @@
     <div class="version-selector">
         <label for="version-select">View site as:</label>
         <select id="version-select" onchange="switchVersion(this.value)">
+            <option value="">Default</option>
             <option value="enterprise">Enterprise</option>
             <option value="professional">Professional Services</option>
             <option value="healthcare">Healthcare</option>
@@ -340,8 +341,13 @@
     <script>
         // Version selector - switch between mockup versions
         function switchVersion(version) {
-            const baseUrl = window.location.href.split('?')[0];
-            window.location.href = baseUrl + '?v=' + version;
+            if (version === '') {
+                // Go to default main site
+                window.location.href = window.location.href.split('?')[0];
+                return;
+            }
+            // Link to the mockup HTML file
+            window.location.href = 'mockups/' + version + '.html';
         }
 
         // Check URL for version parameter
@@ -351,47 +357,6 @@
             const select = document.getElementById('version-select');
             if (select && document.querySelector('option[value="' + versionParam + '"]')) {
                 select.value = versionParam;
-                applyVersionStyles(versionParam);
-            }
-        }
-
-        // Apply version-specific styles
-        function applyVersionStyles(version) {
-            const root = document.documentElement;
-
-            const versions = {
-                enterprise: {
-                    primary: '#0f172a',
-                    accent: '#3b82f6',
-                    bg: '#f8fafc'
-                },
-                professional: {
-                    primary: '#1c1917',
-                    accent: '#b45309',
-                    bg: '#fafaf9'
-                },
-                healthcare: {
-                    primary: '#134e4a',
-                    accent: '#5eead4',
-                    bg: '#f0fdfa'
-                },
-                startup: {
-                    primary: '#18181b',
-                    accent: '#8b5cf6',
-                    bg: '#fafafa'
-                },
-                government: {
-                    primary: '#0c1222',
-                    accent: '#3b82f6',
-                    bg: '#0f172a'
-                }
-            };
-
-            const v = versions[version];
-            if (v) {
-                root.style.setProperty('--primary', v.primary);
-                root.style.setProperty('--accent', v.accent);
-                root.style.setProperty('--light', v.bg);
             }
         }
 
