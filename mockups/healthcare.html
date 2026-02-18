@@ -12,20 +12,21 @@
         }
 
         :root {
-            --primary: #134e4a;
-            --secondary: #0d9488;
-            --accent: #5eead4;
-            --text: #1e293b;
+            --primary: #0f766e;
+            --secondary: #14b8a6;
+            --accent: #ccfbf1;
+            --text: #134e4a;
             --light: #f0fdfa;
             --white: #ffffff;
-            --border: #ccfbf1;
+            --border: #99f6e4;
+            --bg-cream: #fafaf8;
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
+            font-family: 'Nunito', 'Lato', system-ui, sans-serif;
+            line-height: 1.7;
             color: var(--text);
-            background: var(--white);
+            background: var(--bg-cream);
         }
 
         /* Navigation */
@@ -72,22 +73,23 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #115e59 50%, #0f766e 100%);
+            background: linear-gradient(160deg, var(--primary) 0%, #0d9488 60%, var(--secondary) 100%);
             color: white;
-            padding: 6rem 2rem;
+            padding: 7rem 2rem 9rem;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(94, 234, 212, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(94, 234, 212, 0.1) 0%, transparent 40%);
+            height: 120px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f0fdfa' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+            background-size: cover;
         }
 
         .hero-content {
@@ -128,9 +130,12 @@
 
         /* Privacy Banner */
         .privacy-banner {
-            background: #f0fdfa;
-            padding: 1rem 2rem;
+            background: var(--white);
+            padding: 1.25rem 2rem;
             border-bottom: 1px solid var(--border);
+            position: relative;
+            z-index: 10;
+            margin-top: -2.5rem;
         }
 
         .privacy-content {
@@ -139,15 +144,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             font-size: 0.9rem;
             color: var(--primary);
+            flex-wrap: wrap;
         }
 
         .privacy-content span {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            background: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
         }
 
         /* Services Section */

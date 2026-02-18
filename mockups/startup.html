@@ -12,18 +12,18 @@
         }
 
         :root {
-            --primary: #18181b;
-            --accent: #8b5cf6;
-            --accent2: #ec4899;
-            --accent3: #06b6d4;
-            --text: #3f3f46;
-            --light: #fafafa;
-            --gradient: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+            --primary: #1e1b4b;
+            --accent: #f472b6;
+            --accent2: #a78bfa;
+            --accent3: #22d3ee;
+            --text: #312e81;
+            --light: #fefefe;
+            --gradient: linear-gradient(120deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', 'Quicksand', sans-serif;
+            line-height: 1.65;
             color: var(--text);
             background: var(--light);
             overflow-x: hidden;
@@ -182,10 +182,39 @@
 
         /* Tech Stack */
         .tech-stack {
-            padding: 1.5rem 2rem;
+            padding: 2rem;
             background: white;
             border-top: 1px solid #f4f4f5;
             border-bottom: 1px solid #f4f4f5;
+            overflow: hidden;
+        }
+
+        .tech-track {
+            display: flex;
+            gap: 3rem;
+            animation: scroll 20s linear infinite;
+            width: max-content;
+        }
+
+        .tech-track span {
+            font-size: 0.9rem;
+            color: #71717a;
+            font-weight: 600;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-track span::before {
+            content: '◆';
+            color: var(--accent);
+            font-size: 0.6rem;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .tech-icons {
@@ -200,9 +229,46 @@
 
         /* Services Section */
         .services {
-            padding: 6rem 2rem;
-            max-width: 1200px;
+            padding: 5rem 2rem;
+            max-width: 1300px;
             margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.25rem;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(139, 92, 246, 0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .section-title {
@@ -221,39 +287,6 @@
             color: #71717a;
             max-width: 500px;
             margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid #f4f4f5;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.1);
         }
 
         .service-card:hover::before {
@@ -460,7 +493,17 @@
     </section>
 
     <div class="tech-stack">
-        <div class="tech-icons">
+        <div class="tech-track">
+            <span>Ralph Loop</span>
+            <span>Claude Code</span>
+            <span>Firebase</span>
+            <span>Supabase</span>
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>GSD Methodology</span>
+            <span>ECC Quality</span>
+            <span>PMAT Suite</span>
+            <span>Gemini AI</span>
             <span>Ralph Loop</span>
             <span>Claude Code</span>
             <span>Firebase</span>

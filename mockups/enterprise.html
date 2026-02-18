@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>khujta ai - Enterprise AI Solutions</title>
+    <meta name="description" content="khujta ai - Enterprise AI Solutions">
+    <title>khujta ai - Enterprise Solutions</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #0f172a;
             --secondary: #1e40af;
             --accent: #3b82f6;
             --text: #334155;
+            --text-light: #64748b;
             --light: #f8fafc;
+            --white: #ffffff;
             --border: #e2e8f0;
         }
-
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             color: var(--text);
             background: var(--light);
         }
-
-        /* Navigation */
         nav {
             background: var(--primary);
             padding: 1rem 2rem;
@@ -38,288 +33,103 @@
             top: 0;
             z-index: 100;
         }
-
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        /* Hero Section */
+        .logo { color: white; font-size: 1.5rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: 0.2s; }
+        .nav-links a:hover { color: white; }
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 50%, #1e40af 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 50%, var(--secondary) 100%);
             color: white;
             padding: 6rem 2rem;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.5;
         }
-
-        .hero-content {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: #bfdbfe;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .cta-button:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-        }
-
-        /* Trust indicators */
-        .trust-bar {
-            background: white;
-            padding: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .trust-logos {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            color: #94a3b8;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .section-title p {
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            width: 48px;
-            height: 48px;
-            background: #dbeafe;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-
-        .service-card p {
-            color: #64748b;
-            font-size: 0.95rem;
-        }
-
-        /* Agents Section */
-        .agents {
-            background: #f1f5f9;
-            padding: 5rem 2rem;
-        }
-
-        .agents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .agent-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid var(--border);
-        }
-
-        .agent-tag {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .agent-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .agent-card p {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--primary);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact p {
-            color: #94a3b8;
-            margin-bottom: 2rem;
-        }
-
-        .contact-email {
-            font-size: 1.5rem;
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .contact-email:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: #64748b;
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid #1e293b;
-        }
-
-        /* Responsive */
+        .hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.25rem; color: #bfdbfe; margin-bottom: 2rem; }
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .btn:hover { background: #2563eb; transform: translateY(-2px); }
+        .stats-bar { background: var(--primary); padding: 2rem; }
+        .stats-grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-value { display: block; font-size: 2rem; font-weight: 700; color: white; }
+        .stat-label { color: #94a3b8; font-size: 0.85rem; }
+        .trust-bar { background: white; padding: 1.5rem; border-bottom: 1px solid var(--border); }
+        .trust-logos { display: flex; justify-content: center; gap: 3rem; color: #94a3b8; font-weight: 600; flex-wrap: wrap; }
+        .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .section-title p { color: var(--text-light); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 12px; padding: 2rem; border: 1px solid var(--border); transition: 0.3s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .card-icon { width: 48px; height: 48px; background: #dbeafe; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .card h3 { color: var(--primary); margin-bottom: 0.75rem; }
+        .card p { color: var(--text-light); font-size: 0.9rem; }
+        .card a { color: var(--accent); font-weight: 600; text-decoration: none; }
+        .dark-section { background: var(--primary); padding: 5rem 2rem; }
+        .dark-section h2 { color: white; }
+        .dark-section p { color: #94a3b8; }
+        .dark-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; }
+        .dark-card h3 { color: white; }
+        .dark-card p { color: #94a3b8; font-size: 0.85rem; }
+        .tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .method-card { background: #f1f5f9; border-radius: 16px; padding: 2rem; }
+        .method-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+        .method-tag { color: var(--accent); font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem; display: block; }
+        .tech-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; padding: 3rem 2rem; background: #f1f5f9; }
+        .tech-badge { background: white; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; border: 1px solid var(--border); }
+        .contact-section { background: var(--primary); color: white; padding: 5rem 2rem; text-align: center; }
+        .contact-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .contact-section p { color: #94a3b8; margin-bottom: 2rem; }
+        .contact-email { font-size: 1.5rem; color: var(--accent); text-decoration: none; }
+        footer { background: var(--primary); color: #64748b; padding: 2rem; text-align: center; border-top: 1px solid #1e293b; }
+        .back-link { position: fixed; top: 1rem; left: 1rem; background: white; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; color: var(--text); font-size: 0.85rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .trust-logos {
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .stats-grid { gap: 2rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <a href="?v=" class="back-link">← Back to Main</a>
+
     <nav>
         <div class="logo">khujta ai</div>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
+            <li><a href="#methods">Methods</a></li>
             <li><a href="#agents">Agents</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Enterprise-Grade AI Solutions for Business</h1>
-            <p>Scalable, secure, and customizable AI agents built for enterprise needs. From legal strategy to tax planning, we deliver production-ready solutions.</p>
-            <a href="#contact" class="cta-button">Schedule a Consultation</a>
+            <h1>Enterprise-Grade AI Solutions</h1>
+            <p>Scalable, secure AI agents built for enterprise needs. SOC 2 compliant, GDPR aware, with full audit trails.</p>
+            <a href="#contact" class="btn">Schedule Consultation</a>
         </div>
     </section>
+
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-value">500+</span><span class="stat-label">Commits / 3 mo</span></div>
+            <div class="stat-item"><span class="stat-value">6+</span><span class="stat-label">Active Projects</span></div>
+            <div class="stat-item"><span class="stat-value">79%</span><span class="stat-label">Code Coverage</span></div>
+            <div class="stat-item"><span class="stat-value">$5-50</span><span class="stat-label">Per Feature</span></div>
+        </div>
+    </div>
 
     <div class="trust-bar">
         <div class="trust-logos">
@@ -330,77 +140,123 @@
         </div>
     </div>
 
-    <section class="services" id="services">
+    <section class="section" id="services">
         <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Comprehensive AI solutions designed for enterprise scale and security requirements.</p>
+            <h2>Enterprise Services</h2>
+            <p>Scalable solutions for large organizations.</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">⚖️</div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">⚖️</div>
                 <h3>Custom AI Agents</h3>
-                <p>Strategic AI agents for legal, tax, and business domains. Designed for enterprise compliance with full audit trails and decision documentation.</p>
+                <p>Strategic AI for legal, tax, business. Full audit trails, compliance documentation.</p>
+                <a href="#contact">Learn More →</a>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🛠️</div>
+            <div class="card">
+                <div class="card-icon">🛠️</div>
                 <h3>Agent Development</h3>
-                <p>PMAT Suite, Claude Code agents, and custom frameworks. Our development methodologies (Ralph Loop, GSD, ECC) ensure quality at scale.</p>
+                <p>PMAT Suite, Claude Code, custom frameworks. Ralph Loop, GSD, ECC methodologies.</p>
+                <a href="#contact">Learn More →</a>
             </div>
-            <div class="service-card">
-                <div class="service-icon">📱</div>
+            <div class="card">
+                <div class="card-icon">📱</div>
                 <h3>AI Applications</h3>
-                <p>Production applications including Castify and NitoAwa. Battle-tested with 500+ commits and 6+ active projects in the last 3 months.</p>
+                <p>Production apps with enterprise SLAs. Boletapp, NitoAgua with Firebase/Supabase.</p>
+                <a href="#products">View Products →</a>
             </div>
         </div>
     </section>
 
-    <section class="agents" id="agents">
+    <section class="section" id="methods">
         <div class="section-title">
-            <h2>Meet Our AI Agents</h2>
-            <p>Specialized agents powered by the BMAD framework with sidecar knowledge patterns.</p>
+            <h2>Development Methods</h2>
+            <p>Proven methodologies for enterprise scale.</p>
         </div>
-        <div class="agents-grid">
-            <div class="agent-card">
-                <span class="agent-tag">Legal Strategy</span>
-                <h3>El Letrado</h3>
-                <p>Civil litigation and professional negligence expertise for the Chilean legal system.</p>
+        <div class="grid">
+            <div class="method-card">
+                <span class="method-tag">🔄 Iterative Development</span>
+                <h3>Ralph Loop</h3>
+                <p>Single-agent autonomous development. ~380 lines. Fresh context per iteration.</p>
+                <a href="https://github.com/Brownbull/khujta_eggs" target="_blank">GitHub →</a>
             </div>
-            <div class="agent-card">
-                <span class="agent-tag">Tax Planning</span>
-                <h3>El Tributista</h3>
-                <p>Chilean tax law expertise including SII compliance and Airbnb tax structures.</p>
+            <div class="method-card">
+                <span class="method-tag">🚀 Enterprise Scale</span>
+                <h3>GSD</h3>
+                <p>11 specialized agents. ~52K lines. Wave-based parallel execution.</p>
+                <a href="https://github.com/Brownbull/khujta_eggs" target="_blank">GitHub →</a>
             </div>
-            <div class="agent-card">
-                <span class="agent-tag">Meta-Agent</span>
-                <h3>El Director</h3>
-                <p>Framework orchestration with 6-layer architecture for professional agents.</p>
-            </div>
-            <div class="agent-card">
-                <span class="agent-tag">Development</span>
-                <h3>ANTHRA</h3>
-                <p>General-purpose development agent for enterprise automation tasks.</p>
-            </div>
-            <div class="agent-card">
-                <span class="agent-tag">Operations</span>
-                <h3>Brownbull</h3>
-                <p>Career operations agent for job search strategy and pipeline management.</p>
-            </div>
-            <div class="agent-card">
-                <span class="agent-tag">Infrastructure</span>
-                <h3>UNTRA</h3>
-                <p>Ubuntu development workstation agent for remote Claude Code setup.</p>
+            <div class="method-card">
+                <span class="method-tag">🛡️ Quality Critical</span>
+                <h3>ECC</h3>
+                <p>TDD + architecture validation + code review gates.</p>
+                <a href="https://github.com/Brownbull/khujta_eggs" target="_blank">GitHub →</a>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <h2>Ready to Transform Your Business?</h2>
-        <p>Contact us to discuss your enterprise AI needs.</p>
+    <section class="dark-section" id="agents">
+        <div class="section-title">
+            <h2>AI Agents</h2>
+            <p>Specialized agents powered by BMAD framework.</p>
+        </div>
+        <div class="grid">
+            <div class="dark-card"><span class="tag">Legal</span><h3>El Letrado</h3><p>Chilean legal system, civil litigation, professional negligence.</p></div>
+            <div class="dark-card"><span class="tag">Tax</span><h3>El Tributista</h3><p>SII compliance, Airbnb tax structures, Chilean tax law.</p></div>
+            <div class="dark-card"><span class="tag">Meta</span><h3>El Director</h3><p>6-layer architecture for professional agents, orchestration.</p></div>
+            <div class="dark-card"><span class="tag">Dev</span><h3>ANTHRA</h3><p>General-purpose development automation.</p></div>
+            <div class="dark-card"><span class="tag">Infra</span><h3>UNTRA</h3><p>Ubuntu workstation, Claude Code via Tailscale.</p></div>
+            <div class="dark-card"><span class="tag">Career</span><h3>Brownbull</h3><p>Job search strategy, pipeline management.</p></div>
+        </div>
+    </section>
+
+    <section class="section" id="products">
+        <div class="section-title">
+            <h2>Products</h2>
+            <p>Production deployments with enterprise support.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Boletapp</h3>
+                <p>AI receipt scanning PWA. <a href="https://boletapp-d609f.web.app" target="_blank">Live demo</a>. 79% coverage.</p>
+                <a href="https://github.com/Brownbull/gmni_boletapp" target="_blank">GitHub →</a>
+            </div>
+            <div class="card">
+                <h3>NitoAgua</h3>
+                <p>Water delivery for rural Chile. Next.js/Supabase. 200+ commits.</p>
+                <a href="https://github.com/Brownbull/nitoagua" target="_blank">GitHub →</a>
+            </div>
+            <div class="card">
+                <h3>Workspace MCP</h3>
+                <p>Google Workspace control via natural language. <a href="https://workspacemcp.com" target="_blank">workspacemcp.com</a></p>
+                <a href="https://pypi.org/project/workspace-mcp/" target="_blank">PyPI →</a>
+            </div>
+            <div class="card">
+                <h3>Archie</h3>
+                <p>AI cost tracking. $5-50/feature. 126+ sessions. 85% cache efficiency.</p>
+                <a href="https://github.com/Brownbull/archie" target="_blank">GitHub →</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="tech-badges">
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">TypeScript</span>
+        <span class="tech-badge">Next.js</span>
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Firebase</span>
+        <span class="tech-badge">Supabase</span>
+        <span class="tech-badge">Gemini</span>
+        <span class="tech-badge">Claude Code</span>
+    </div>
+
+    <section class="contact-section" id="contact">
+        <h2>Transform Your Enterprise</h2>
+        <p>Schedule a consultation for enterprise AI solutions.</p>
         <a href="mailto:khujta.ai@gmail.com" class="contact-email">khujta.ai@gmail.com</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 khujta ai. Strategic AI solutions for businesses.</p>
+        <p>&copy; 2026 khujta ai. Enterprise AI Solutions.</p>
     </footer>
 </body>
 </html>

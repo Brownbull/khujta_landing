@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>khujta ai - Professional Services AI</title>
+    <meta name="description" content="khujta ai - Professional Services">
+    <title>khujta ai - Professional Services</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #1c1917;
-            --secondary: #78716c;
             --accent: #b45309;
-            --text: #44403c;
-            --light: #fafaf9;
-            --border: #e7e5e4;
             --gold: #d97706;
+            --text: #44403c;
+            --text-light: #78716c;
+            --light: #fafaf9;
+            --cream: #f5f5f4;
+            --border: #e7e5e4;
         }
-
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.7;
             color: var(--text);
             background: var(--light);
         }
-
-        /* Navigation */
         nav {
             background: white;
             padding: 1.25rem 3rem;
@@ -40,290 +34,76 @@
             top: 0;
             z-index: 100;
         }
-
-        .logo {
-            color: var(--primary);
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-family: 'Segoe UI', sans-serif;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
+        .logo { color: var(--primary); font-size: 1.4rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; transition: 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
         .hero {
-            background: linear-gradient(180deg, #fafaf9 0%, #f5f5f4 100%);
+            background: linear-gradient(180deg, var(--light) 0%, var(--cream) 100%);
             padding: 5rem 3rem;
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 400;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-        }
-
-        .disclaimer {
-            background: #fef3c7;
-            border-left: 4px solid var(--gold);
-            padding: 1rem 1.5rem;
-            margin-bottom: 2rem;
-            text-align: left;
-            font-size: 0.9rem;
-            color: #92400e;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.875rem 2.5rem;
-            text-decoration: none;
-            font-family: 'Segoe UI', sans-serif;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-        }
-
-        .cta-button:hover {
-            background: var(--accent);
-        }
-
-        /* Credentials Bar */
-        .credentials {
-            background: white;
-            padding: 1.5rem 3rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .credentials-list {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            font-size: 0.85rem;
-            color: var(--secondary);
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .credentials-list span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 3rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.25rem;
-            font-weight: 400;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .section-title p {
-            color: var(--secondary);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-
-        .service-card p {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Agents Section */
-        .agents {
-            background: #f5f5f4;
-            padding: 5rem 3rem;
-        }
-
-        .agents-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .agent-card {
-            background: white;
-            padding: 2rem;
-            border: 1px solid var(--border);
-        }
-
-        .agent-tag {
-            display: inline-block;
-            background: #fef3c7;
-            color: #b45309;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .agent-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-
-        .agent-card p {
-            color: var(--secondary);
-            font-size: 0.85rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: white;
-            padding: 5rem 3rem;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .contact h2 {
-            font-size: 2rem;
-            font-weight: 400;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .contact p {
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-email {
-            font-size: 1.25rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .contact-email:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: #a8a29e;
-            padding: 2rem 3rem;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        footer p {
-            font-style: italic;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .services-grid,
-            .agents-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
+        .hero-content { max-width: 700px; margin: 0 auto; }
+        .hero h1 { font-size: 2.75rem; font-weight: 400; font-style: italic; color: var(--primary); margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; color: var(--text-light); }
+        .disclaimer { background: #fef3c7; border-left: 4px solid var(--gold); padding: 1rem 1.5rem; margin: 1.5rem 0; text-align: left; font-size: 0.9rem; color: #92400e; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.875rem 2.5rem; text-decoration: none; font-family: 'Segoe UI', sans-serif; font-weight: 500; transition: 0.3s; }
+        .btn:hover { background: var(--accent); }
+        .stats-bar { background: white; padding: 2rem; border-bottom: 1px solid var(--border); }
+        .stats-grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-value { display: block; font-size: 1.75rem; font-weight: 700; color: var(--primary); }
+        .stat-label { font-size: 0.8rem; color: var(--text-light); font-family: 'Segoe UI', sans-serif; }
+        .credentials { background: white; padding: 1.5rem 3rem; border-bottom: 1px solid var(--border); font-family: 'Segoe UI', sans-serif; }
+        .credentials-list { display: flex; justify-content: center; gap: 3rem; color: var(--text-light); font-size: 0.85rem; flex-wrap: wrap; }
+        .section { padding: 4rem 3rem; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.25rem; font-weight: 400; font-style: italic; color: var(--primary); margin-bottom: 0.5rem; }
+        .section-title p { color: var(--text-light); }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .card { background: white; padding: 2rem; border: 1px solid var(--border); text-align: center; }
+        .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .card h3 { color: var(--primary); font-weight: 500; margin-bottom: 0.75rem; font-size: 1.1rem; }
+        .card p { color: var(--text-light); font-size: 0.85rem; font-family: 'Segoe UI', sans-serif; }
+        .card a { color: var(--accent); font-weight: 600; text-decoration: none; font-family: 'Segoe UI', sans-serif; }
+        .dark-section { background: var(--primary); padding: 4rem 3rem; }
+        .dark-section h2 { color: white; }
+        .dark-section p { color: #a8a29e; }
+        .dark-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; }
+        .dark-card h3 { color: white; font-weight: 500; }
+        .dark-card p { color: #a8a29e; font-size: 0.8rem; font-family: 'Segoe UI', sans-serif; }
+        .tag { display: inline-block; background: #fef3c7; color: #b45309; padding: 0.25rem 0.75rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; font-family: 'Segoe UI', sans-serif; }
+        .method-card { background: var(--cream); padding: 1.5rem; border: 1px solid var(--border); }
+        .method-card h3 { color: var(--primary); font-style: italic; margin-bottom: 0.5rem; }
+        .method-tag { color: var(--accent); font-weight: 600; font-size: 0.8rem; font-family: 'Segoe UI', sans-serif; display: block; margin-bottom: 0.5rem; }
+        .tech-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; padding: 3rem; background: var(--cream); }
+        .tech-badge { background: white; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; border: 1px solid var(--border); font-family: 'Segoe UI', sans-serif; }
+        .contact-section { background: white; padding: 4rem 3rem; text-align: center; border-top: 1px solid var(--border); }
+        .contact-section h2 { font-size: 2rem; font-style: italic; color: var(--primary); }
+        .contact-section p { color: var(--text-light); margin-bottom: 1.5rem; }
+        .contact-email { font-size: 1.25rem; color: var(--accent); text-decoration: none; font-family: 'Segoe UI', sans-serif; }
+        footer { background: var(--primary); color: #a8a29e; padding: 2rem 3rem; text-align: center; font-size: 0.85rem; font-style: italic; }
+        .back-link { position: fixed; top: 1rem; left: 1rem; background: white; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; color: var(--text); font-size: 0.85rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-family: 'Segoe UI', sans-serif; }
+        @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .services-grid,
-            .agents-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .credentials-list {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .grid { grid-template-columns: 1fr; }
+            .credentials-list { flex-direction: column; gap: 0.75rem; align-items: center; }
         }
     </style>
 </head>
 <body>
+    <a href="?v=" class="back-link">← Back to Main</a>
+
     <nav>
         <div class="logo">khujta ai</div>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
+            <li><a href="#methods">Methods</a></li>
             <li><a href="#agents">Agents</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -331,94 +111,140 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Strategic Guidance for Legal, Tax & Business</h1>
-            <p>Expert AI-powered insights for professionals. Our agents provide strategic analysis to support your decision-making process.</p>
+            <p>Expert AI-powered insights for professionals. Our agents provide strategic analysis to support your decision-making.</p>
             <div class="disclaimer">
-                <strong>Important Disclaimer:</strong> khujta ai provides strategic guidance and insights only. We do not provide licensed legal, tax, or professional advice. All outputs should be reviewed by qualified professionals.
+                <strong>Disclaimer:</strong> khujta ai provides strategic guidance only. NOT licensed legal, tax, or professional advice. Review by qualified professionals recommended.
             </div>
-            <a href="#contact" class="cta-button">Request Consultation</a>
+            <a href="#contact" class="btn">Request Consultation</a>
         </div>
     </section>
+
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-value">500+</span><span class="stat-label">Commits / 3 mo</span></div>
+            <div class="stat-item"><span class="stat-value">6+</span><span class="stat-label">Active Projects</span></div>
+            <div class="stat-item"><span class="stat-value">79%</span><span class="stat-label">Code Coverage</span></div>
+            <div class="stat-item"><span class="stat-value">$5-50</span><span class="stat-label">Per Feature</span></div>
+        </div>
+    </div>
 
     <div class="credentials">
         <div class="credentials-list">
             <span>✓ Strategic Guidance</span>
             <span>✓ Compliance Awareness</span>
             <span>✓ Expertise Credentials</span>
-            <span>✓ Industry Experience</span>
         </div>
     </div>
 
-    <section class="services" id="services">
+    <section class="section" id="services">
         <div class="section-title">
-            <h2>Our Expertise</h2>
-            <p>Professional services enhanced with AI-powered strategic insights.</p>
+            <h2>Professional Expertise</h2>
+            <p>AI-enhanced services for legal and tax professionals.</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">⚖️</div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">⚖️</div>
                 <h3>Legal Strategy Agents</h3>
-                <p>AI agents specialized in Chilean legal systems, civil litigation, and professional negligence. Provides strategic analysis for legal professionals.</p>
+                <p>AI agents for Chilean legal systems, civil litigation, professional negligence. Strategic analysis.</p>
+                <a href="#contact">Consult →</a>
             </div>
-            <div class="service-card">
-                <div class="service-icon">📊</div>
+            <div class="card">
+                <div class="card-icon">📊</div>
                 <h3>Tax Planning Agents</h3>
-                <p>Expert agents for Chilean tax law, SII compliance, and complex tax structures. Strategic insights for tax planning professionals.</p>
+                <p>Chilean tax law, SII compliance, Airbnb structures. Strategic insights for tax professionals.</p>
+                <a href="#contact">Consult →</a>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>Business Strategy Agents</h3>
-                <p>AI-powered business intelligence and strategic planning. Decision support for executives and business leaders.</p>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Business Strategy</h3>
+                <p>AI-powered business intelligence and decision support for executives.</p>
+                <a href="#contact">Consult →</a>
             </div>
         </div>
     </section>
 
-    <section class="agents" id="agents">
+    <section class="section" id="methods">
+        <div class="section-title">
+            <h2>Our Methods</h2>
+            <p>Rigorous methodologies for professional services.</p>
+        </div>
+        <div class="grid">
+            <div class="method-card">
+                <span class="method-tag">🔄 Ralph Loop</span>
+                <h3>Iterative Development</h3>
+                <p>Single-agent autonomous. Fresh context per iteration.</p>
+                <a href="https://github.com/Brownbull/khujta_eggs" target="_blank">GitHub →</a>
+            </div>
+            <div class="method-card">
+                <span class="method-tag">🚀 GSD</span>
+                <h3>Enterprise Scale</h3>
+                <p>11 specialized agents. Wave-based execution.</p>
+                <a href="https://github.com/Brownbull/khujta_eggs" target="_blank">GitHub →</a>
+            </div>
+            <div class="method-card">
+                <span class="method-tag">🛡️ ECC</span>
+                <h3>Quality Control</h3>
+                <p>TDD + architecture validation + code review.</p>
+                <a href="https://github.com/Brownbull/khujta_eggs" target="_blank">GitHub →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark-section" id="agents">
         <div class="section-title">
             <h2>Our Specialists</h2>
-            <p>Domain-specific AI agents powered by the BMAD framework.</p>
+            <p>Domain-specific AI agents.</p>
         </div>
-        <div class="agents-grid">
-            <div class="agent-card">
-                <span class="agent-tag">Legal Strategy</span>
-                <h3>El Letrado</h3>
-                <p>Civil litigation and professional negligence expertise for the Chilean legal system.</p>
+        <div class="grid">
+            <div class="dark-card"><span class="tag">Legal</span><h3>El Letrado</h3><p>Civil litigation, professional negligence, Chilean law.</p></div>
+            <div class="dark-card"><span class="tag">Tax</span><h3>El Tributista</h3><p>SII compliance, Airbnb tax structures.</p></div>
+            <div class="dark-card"><span class="tag">Meta</span><h3>El Director</h3><p>6-layer architecture, orchestration.</p></div>
+            <div class="dark-card"><span class="tag">Dev</span><h3>ANTHRA</h3><p>General-purpose automation.</p></div>
+            <div class="dark-card"><span class="tag">Infra</span><h3>UNTRA</h3><p>Ubuntu workstation, Claude Code.</p></div>
+            <div class="dark-card"><span class="tag">Career</span><h3>Brownbull</h3><p>Job search, pipeline management.</p></div>
+        </div>
+    </section>
+
+    <section class="section" id="products">
+        <div class="section-title">
+            <h2>Products</h2>
+            <p>Production applications.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Boletapp</h3>
+                <p>AI receipt scanning. <a href="https://boletapp-d609f.web.app" target="_blank">Live demo</a>.</p>
+                <a href="https://github.com/Brownbull/gmni_boletapp" target="_blank">GitHub →</a>
             </div>
-            <div class="agent-card">
-                <span class="agent-tag">Tax Planning</span>
-                <h3>El Tributista</h3>
-                <p>Chilean tax law expertise including SII compliance and Airbnb tax structures.</p>
+            <div class="card">
+                <h3>NitoAgua</h3>
+                <p>Water delivery coordination. 200+ commits.</p>
+                <a href="https://github.com/Brownbull/nitoagua" target="_blank">GitHub →</a>
             </div>
-            <div class="agent-card">
-                <span class="agent-tag">Meta-Agent</span>
-                <h3>El Director</h3>
-                <p>Framework orchestration with 6-layer architecture for professional agents.</p>
-            </div>
-            <div class="agent-card">
-                <span class="agent-tag">General Purpose</span>
-                <h3>ANTHRA</h3>
-                <p>General-purpose agent for business automation and operations.</p>
-            </div>
-            <div class="agent-card">
-                <span class="agent-tag">Operations</span>
-                <h3>UNTRA</h3>
-                <p>Ubuntu development workstation agent for technical infrastructure.</p>
-            </div>
-            <div class="agent-card">
-                <span class="agent-tag">Career</span>
-                <h3>Brownbull</h3>
-                <p>Career operations agent for job search strategy and pipeline management.</p>
+            <div class="card">
+                <h3>Workspace MCP</h3>
+                <p><a href="https://workspacemcp.com" target="_blank">workspacemcp.com</a></p>
+                <a href="https://pypi.org/project/workspace-mcp/" target="_blank">PyPI →</a>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <div class="tech-badges">
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">TypeScript</span>
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Firebase</span>
+        <span class="tech-badge">Supabase</span>
+    </div>
+
+    <section class="contact-section" id="contact">
         <h2>Partner with Us</h2>
-        <p>Discuss how our AI agents can support your professional practice.</p>
+        <p>Discuss how our AI agents can support your practice.</p>
         <a href="mailto:khujta.ai@gmail.com" class="contact-email">khujta.ai@gmail.com</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 khujta ai. Strategic AI solutions. Not licensed legal or tax advice.</p>
+        <p>&copy; 2026 khujta ai. Strategic guidance only. Not licensed advice.</p>
     </footer>
 </body>
 </html>
